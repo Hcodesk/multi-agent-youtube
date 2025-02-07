@@ -1,11 +1,10 @@
-import {Agent , Task , Team} from "kaibanjs"
-import {TavilySearchResults} from "@langchain/community/tools/tavily_search"
-import { NextResponse } from "next/server"
-import { Tilt_Neon } from "next/font/google"
+import {Agent , Task , Team} from "kaibanjs" //package js utilisé pour créer des agents IA , des tâches et des équipes
+import {TavilySearchResults} from "@langchain/community/tools/tavily_search" //est un outil qui va aller intérroger l'api tavilySearch et retourner un json
+//tavily est un moteur de recherche temps réel permettant dux agent IA de récuperer des informations sur le net
+import { NextResponse } from "next/server"  //fonction de next/server pour créer des réponses http
 
 
-
-//1 define the search tool that we can use to search the agent 
+//1 définition de l'outil auquel l'agent aura accès
 const searchTool = new TavilySearchResults ({
     maxResults : 5,
     apiKey : process.env.TAVILY_API_KEY
